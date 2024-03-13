@@ -251,11 +251,10 @@ function App() {
 
 // 55
 const [count, setCount] = useState(0);
-	
-	return <div>
-		<span>{count}</span>
-		<button onClick={() => setCount(count + 1)}>+</button>
+  return <div>
+    <span>{count}</span>
+    <button onClick={() => setCount(count + 1)}>+</button>
     <button onClick={() => setCount(count - 1)}>-</button>
-	</div>;
+    </div>;
 }
 export default App;
