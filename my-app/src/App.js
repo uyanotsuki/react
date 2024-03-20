@@ -1,260 +1,219 @@
 import React from 'react';
 function App() {
-// 34
-// function show1() {
-//     alert(1);
-//   }
-//   function show2() {
-//     alert(2);
-//   }
-//   function show3() {
-//     alert(3);
-//   }
-//   return <div>
-//     <p><button onClick={show1}>button 1</button></p>
-//     <p><button onClick={show2}>button 2</button></p> 
-//     <p><button onClick={show3}>button 3</button></p> 
-//   </div>;
+// // 56
+//   const [text1, setText1] = useState('');
+//     const [text2, setText2] = useState('');
 
-// // 35.1
-//   class App extends React.Component {
-//     handleClick(event) {
-//       console.log(event);
+//     function handleChangeInput1(event) {
+//       setText1(event.target.value);
 //     }
 
-//     render() {
-//       return (
-//         <button onClick={this.handleClick}>Нажмите на меня</button>
-//       );
+//     function handleChangeInput2(event) {
+//       setText2(event.target.value);
 //     }
+
+//     return (
+//       <div>
+//         <label>Input 1: </label>
+//         <input value={text1} onChange={handleChangeInput1} />
+//         <p>Text from Input 1: {text1}</p>
+
+//         <label>Input 2: </label>
+//         <input value={text2} onChange={handleChangeInput2} />
+//         <p>Text from Input 2: {text2}</p>
+//       </div>
+//     );
+
+//   // 57
+//   const [inputText, setInputText] = useState('');
+
+//   function handleChange(event) {
+//     const inputValue = event.target.value;
+//     setInputText(inputValue);
 //   }
 
-// // 35.2
-//   class App extends React.Component {
-//     handleClick(event) {
-//       console.log(event.target);
-//     }
-//     render() {
-//       return (
-//         <button onClick={this.handleClick}>Нажмите на меня</button>
-//       );
-//     }
+//   return (
+//     <div>
+//       <label>Input: </label>
+//       <input value={inputText} onChange={handleChange} />
+//       <p>Number of characters: {inputText.length}</p>
+//     </div>
+//   );
+
+//   // 58
+//   const [fahrenheit, setFahrenheit] = useState('');
+
+//   function handleChange(event) {
+//     setFahrenheit(event.target.value);
 //   }
 
-// // 36.2
-  // function func(arg, arg2, event) {
-  //   console.log(arg, arg2, event);
+//   function convertToCelsius() {
+//     const fahrenheitValue = parseFloat(fahrenheit);
+//     const celsiusValue = (fahrenheitValue - 32) * (5 / 9);
+//     return isNaN(celsiusValue) ? 'Invalid input' : celsiusValue.toFixed(2);
+//   }
+
+//   return (
+//     <div>
+//       <label>Enter Fahrenheit: </label>
+//       <input value={fahrenheit} onChange={handleChange} />
+//       <p>Celsius: {convertToCelsius()}</p>
+//     </div>
+//   );
+
+//   // 59
+//   const [value1, setValue1] = useState(0);
+//   const [value2, setValue2] = useState(0);
+//   const [value3, setValue3] = useState(0);
+//   const [value4, setValue4] = useState(0);
+//   const [value5, setValue5] = useState(0);
+
+//   function handleChange1(event) {
+//     setValue1(+event.target.value);
+//   }
+
+//   function handleChange2(event) {
+//     setValue2(+event.target.value);
+//   }
+
+//   function handleChange3(event) {
+//     setValue3(+event.target.value);
+//   }
+
+//   function handleChange4(event) {
+//     setValue4(+event.target.value);
+//   }
+
+//   function handleChange5(event) {
+//     setValue5(+event.target.value);
+//   }
+
+//   const average = (value1 + value2 + value3 + value4 + value5) / 5;
+
+//   return (
+//     <div>
+//       <input value={value1} onChange={handleChange1} />
+//       <input value={value2} onChange={handleChange2} />
+//       <input value={value3} onChange={handleChange3} />
+//       <input value={value4} onChange={handleChange4} />
+//       <input value={value5} onChange={handleChange5} />
+//       <p>Average: {average}</p>
+//     </div>
+//   );
+
+  // 60
+  // const [number, setNumber] = useState('');
+  // const [productOfDivisors, setProductOfDivisors] = useState(1);
+
+  // function handleBlur() {
+  //   const parsedNumber = parseInt(number, 10);
+  //   if (!isNaN(parsedNumber) && parsedNumber !== 0) {
+  //     const divisors = getDivisors(parsedNumber);
+  //     const product = divisors.reduce((acc, divisor) => acc * divisor, 1);
+  //     setProductOfDivisors(product);
+  //   } else {
+  //     setProductOfDivisors(0);
+  //   }
+  // }
+
+  // function getDivisors(n) {
+  //   const divisors = [];
+  //   for (let i = 1; i <= n; i++) {
+  //     if (n % i === 0) {
+  //       divisors.push(i);
+  //     }
+  //   }
+  //   return divisors;
   // }
 
   // return (
   //   <div>
-  //     <button onClick={event => func('eee', 'aaa', event)}>act</button>
+  //     <input value={number} onChange={event => setNumber(event.target.value)} onBlur={handleBlur} />
+  //     <p>Product of Divisors: {productOfDivisors}</p>
   //   </div>
   // );
 
-// 36.3
-// 	function func(event, arg) {
-// 		console.log(arg, event);
-// 	}	
-// 	return <div>
-// 		<button onClick={event => func('eee', event)}>act</button>
-// 	</div>;
+  // // 61
+  // const [text, setText] = useState('');
 
-// 36.4
-// function func(arg, event, arg2) {
-// 	console.log(arg, arg2, event);
-// }
-// return <div>
-// 	<button onClick={event => func('eee', 'aaa', event)}>Нажмите на меня</button>
-// </div>;
-
-// 37
-// 	const arr = [
-// 		<li>1</li>,
-// 		<li>2</li>,
-// 		<li>3</li>,
-// 		<li>4</li>,
-// 		<li>5</li>,
-// 	];
-// return <ul>
-// {arr}
-// </ul>
-// }
-
-// 38
-// 	const arr = [];
-// 	for (let i = 1; i <= 5; i++) {
-// 		arr.push(<li>{i}</li>);
-// 	}
-// 	return <ul>
-// 		{arr}
-// 	</ul>;
-
-// 39
-// const arr = ['a', 'b', 'c', 'd', 'e'];
-// const res = arr.map(function(item) {
-// 	return <li>{item}</li>;
-// });
-// return <ul>
-// 	{res}
-// </ul>;
-
-// 40
-// const arr = ['a', 'b', 'c', 'd', 'e'];
-	
-// const res = arr.map(function(item, index) {
-// 	return <li key={index}>{item}</li>;
-// });
-	
-// return <ul>
-// 	{res}
-// </ul>;
-
-// 41
-// const users = [
-//     {name: 'user1', surn: 'surn1', age: 30},
-//     {name: 'user2', surn: 'surn2', age: 31},
-//     {name: 'user3', surn: 'surn3', age: 32},
-// ];
-// const res = users.map(function(item, index) {
-// 	return <li key={index}>
-// 	<span>{item.name}</span>:
-// 	<span>{item.surn}</span>:
-//      <span>{item.age}</span>
-// 	</li>;
-// });
-	
-// return <ul>
-// 	{res}
-// </ul>;
-
-// 42
-  // const users = [
-  //   {id:1, name: 'user1', surn: 'surn1', age: 30 },
-  //   {id:2, name: 'user2', surn: 'surn2', age: 31 },
-  //   {id:3, name: 'user3', surn: 'surn3', age: 32 },
-  // ];
-
-  // const res = users.map(function (item) {
-  //   return <li key={item.id}>
-  //     <span>{item.name}</span>:
-  //     <span>{item.surn}</span>:
-  //     <span>{item.age}</span>
-  //   </li>;
-  // });
-
-  // return <ul>
-  //   {res}
-  // </ul>;
-
-
-  // 43
-  // const users = [
-  //   { id: 1, name: 'user1', surn: 'surn1', age: 30 },
-  //   { id: 2, name: 'user2', surn: 'surn2', age: 31 },
-  //   { id: 3, name: 'user3', surn: 'surn3', age: 32 },
-  // ];
-  // const rows = users.map(function (item) {
-  //   return <tr key={item.id}>
-  //     <td>{item.name}</td>
-  //     <td>{item.surn}</td>
-  //     <td>{item.age}</td>
-  //   </tr>;
-  // });
-
-  // return <table>
-  //   <thead>
-  //     <tr>
-  //       <td>Имя</td>
-  //       <td>Фамилия</td>
-  //       <td>Возраст</td>
-  //     </tr>
-  //   </thead>
-  //   <tbody>
-  //     {rows}
-  //   </tbody>
-  // </table>;
-
-  // 44-47
-  // const array = ['one', 'two', 'three'];
-  // const res = array.map(function (item) {
-  //   return <p id={uuid()}>{item}</p>
-  // });
-
-  // return <div>
-  //   {res}
-  // </div>
-
-  // 48
-  // function id() {
-  //   return uuid()
+  // function handleChange(event) {
+  //   setText(event.target.value);
   // }
-  // const array = ['one', 'two', 'three'];
-  // const res = array.map(function (item) {
-  //   return <p id={id()}>{item}</p>
-  // });
 
-  // return <div>
-  //   {res}
-  // </div>
+  // function transliterate(text) {
+  //   const transliterationMap = {
+  //     а: 'a', б: 'b', в: 'v', г: 'g', д: 'd', е: 'e', ё: 'e', ж: 'zh', з: 'z', и: 'i',
+  //     й: 'y', к: 'k', л: 'l', м: 'm', н: 'n', о: 'o', п: 'p', р: 'r', с: 's', т: 't',
+  //     у: 'u', ф: 'f', х: 'kh', ц: 'ts', ч: 'ch', ш: 'sh', щ: 'sch', ы: 'y', э: 'e',
+  //     ю: 'yu', я: 'ya', А: 'A', Б: 'B', В: 'V', Г: 'G', Д: 'D', Е: 'E', Ё: 'E', Ж: 'Zh',
+  //     З: 'Z', И: 'I', Й: 'Y', К: 'K', Л: 'L', М: 'M', Н: 'N', О: 'O', П: 'P', Р: 'R',
+  //     С: 'S', Т: 'T', У: 'U', Ф: 'F', Х: 'Kh', Ц: 'Ts', Ч: 'Ch', Ш: 'Sh', Щ: 'Sch',
+  //     Ы: 'Y', Э: 'E', Ю: 'Yu', Я: 'Ya'
+  //   };
 
+  //   return text.split('').map(char => transliterationMap[char] || char).join('');
+  // }
 
-// 49
-// function id() {
-//     return uuid()
-//   }
-//   const prods = [
-//     { id: id(), name: 'product1', cost: 100 },
-//     { id: id(), name: 'product2', cost: 200 },
-//     { id: id(), name: 'product3', cost: 300 },
-//   ];
-//   const res = prods.map(function(item) {
-// 		return <p id={item.id}>
-// 			<span>{item.name}</span>:
-// 			<span>{item.cost}</span>
-// 		</p>;
-// 	});
+  // const transliteratedText = transliterate(text);
 
-//   return <div>
-//     {res}
-//   </div>
+  // return (
+  //   <div>
+  //     <textarea value={text} onChange={handleChange} />
+  //     <p>Transliteration: {transliteratedText}</p>
+  //   </div>
+  // );
 
-// 50 - 52
-//  const [name, setName] = useState('fullName');
-  // const [age, setAge] = useState('Age');
+  // // 62
+  // const [htmlChecked, setHtmlChecked] = useState(false);
+  // const [cssChecked, setCssChecked] = useState(false);
+  // const [jsChecked, setJsChecked] = useState(false);
 
-  // return <div>
-  //   <p>{name}</p>
-  //   <p>{age}</p>
-  // </div>
+  // return (
+  //   <div>
+  //     <label>
+  //       <input type="checkbox" checked={htmlChecked} onChange={() => setHtmlChecked(!htmlChecked)} />
+  //       HTML
+  //     </label>
+  //     <p>HTML: {htmlChecked ? 'знает' : 'не знает'}</p>
 
+  //     <label>
+  //       <input type="checkbox" checked={cssChecked} onChange={() => setCssChecked(!cssChecked)} />
+  //       CSS
+  //     </label>
+  //     <p>CSS: {cssChecked ? 'знает' : 'не знает'}</p>
 
-// 53
-// const [name, setName] = useState('fullName');
+  //     <label>
+  //       <input type="checkbox" checked={jsChecked} onChange={() => setJsChecked(!jsChecked)} />
+  //       JavaScript
+  //     </label>
+  //     <p>JavaScript: {jsChecked ? 'знает' : 'не знает'}</p>
+  //   </div>
+  // );
 
-//   return <div>
-//     <span>{name}</span><br />
-//     <button onClick={() => setName('Pav A')}>Click me</button>
-//     <button onClick={() => setName('fullname')}>reset</button>
-//   </div>
+  // 63
+  const [isOver18, setIsOver18] = useState(false);
 
-// 54
-// const [isBanned, setBan] = useState('False');
-//   return <div>
-//       <span>{isBanned ? "Banned" : "Not banned"}</span><br />
-//       {isBanned ? (
-//         <button onClick={() => setBan(false)}>Unban</button>
-//       ) : (
-//         <button onClick={() => setBan(true)}>Ban</button>
-//       )}
-//   </div>
+  let content;
+  if (isOver18) {
+    content = (
+      <div>
+        <h2>вам уже есть 18</h2>
+        <p>здесь расположен контент только для взрослых</p>
+      </div>
+    );
+  } else {
+    content = (
+      <div>
+        <p>Увы, вам еще нет 18 лет</p>
+      </div>
+    );
+  }
 
-// 55
-const [count, setCount] = useState(0);
-  return <div>
-    <span>{count}</span>
-    <button onClick={() => setCount(count + 1)}>+</button>
-    <button onClick={() => setCount(count - 1)}>-</button>
-    </div>;
+  return (
+    <div>
+      <input type="checkbox" checked={isOver18} onChange={() => setIsOver18(!isOver18)} />
+      {content}
+    </div>
+  );
 }
 export default App;
